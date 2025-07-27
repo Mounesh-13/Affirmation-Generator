@@ -1,0 +1,189 @@
+/* --- General & Typography --- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #343a40;
+}
+
+p {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Form Elements --- */
+#affirmation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.form-group {
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+button {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #4338ca;
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: #a5b4fc;
+    cursor: not-allowed;
+}
+
+#regenerate-button {
+    margin-top: 1.5rem;
+    background-color: #10b981;
+}
+
+#regenerate-button:hover:not(:disabled) {
+    background-color: #059669;
+}
+
+
+/* --- Results & State Indicators --- */
+#results-section {
+    margin-top: 2rem;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #e9ecef;
+    border-bottom-color: #4f46e5;
+    border-radius: 50%;
+    display: block;
+    margin: 2rem auto;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message {
+    background-color: #fff5f5;
+    color: #c53030;
+    border: 1px solid #fed7d7;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+#affirmations-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+.affirmation-item {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #343a40;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- Footer --- */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #e9ecef;
+    border-top: 1px solid #dee2e6;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
